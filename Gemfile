@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 
+gem 'spork-rails'
+gem "ZenTest", "4.9.0"
+gem "autotest-rails"
+gem "growl-rspec"
 
 group :development, :test do
 	gem 'sqlite3', '1.3.5'

@@ -1,11 +1,23 @@
 require 'spec_helper'
 
 describe PagesController do
-
+  render_views
+      
   describe "GET 'home'" do
     it "returns http success" do
-      get 'home'
+      visit '/pages/home'
       response.should be_success
+    end
+
+    it "should have the right title" do
+      visit '/pages/home'
+      page.should have_selector('title',
+        :text => "ROR sample | Home")
+    end
+
+    it "should have a non-blank body" do
+      visit '/pages/home'
+      response.body.should_not =~ /<body>\s*<\/body>/
     end
   end
 
@@ -14,6 +26,25 @@ describe PagesController do
       get 'contact'
       response.should be_success
     end
-  end
 
+    it "should have the right title" do
+      visit '/pages/contact'
+      page.should have_selector('title',
+        :text => "ROR sample | Contact")
+    end
+  end
+ 
+   describe "GET 'about'" do
+    it "returns http success" do
+      get 'about'  
+      response.should be_success
+    end
+
+    it "should have the right title" do
+      visit '/pages/about'
+      page.should have_selector('title',
+        :text => "ROR sample | About")
+    end
+  end
+ 
 end
