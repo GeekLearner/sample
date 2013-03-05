@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.12'
 
 gem 'spork-rails'
-gem "ZenTest", "4.9.0"
+# gem "ZenTest", "4.9.0"
+#gem "ZenTest"
 gem "autotest-rails"
 gem "growl-rspec"
 
