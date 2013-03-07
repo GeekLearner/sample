@@ -9,11 +9,13 @@
 
 		<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
 		<%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
-		<!--[if lt IE 8]> <%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
+		<!--[if lt IE 8]> 
+		<%= stylesheet_link_tag 'blueprint/ie' %>
+		<![endif]-->
 		<%= stylesheet_link_tag 'custom', :media => 'screen' %>
 	</head>
 	<body>
-		<div class="controller">
+		<div class="container">
 			<header>
 				<%= image_tag("logo.png", :alt => "ROR sample", :class => "round") %>
 				<nav class="round">
@@ -27,7 +29,6 @@
 			<section class="round">
 				<%= yield %>
 			</section>
-
 		</div>
 	</body>
 </html>
